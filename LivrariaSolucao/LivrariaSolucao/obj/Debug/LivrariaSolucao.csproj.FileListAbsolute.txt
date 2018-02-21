@@ -1,0 +1,9 @@
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\bin\Debug\LivrariaSolucao.exe
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\bin\Debug\LivrariaSolucao.pdb
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.csprojResolveAssemblyReference.cache
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.Form1.resources
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.Properties.Resources.resources
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.csproj.GenerateResource.Cache
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.csproj.CoreCompileInputs.cache
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.exe
+c:\users\mkdvi\source\repos\LivrariaSolucao\LivrariaSolucao\obj\Debug\LivrariaSolucao.pdb
