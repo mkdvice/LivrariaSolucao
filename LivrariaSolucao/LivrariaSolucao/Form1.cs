@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,24 +12,67 @@ namespace LivrariaSolucao
 {
     public partial class Form1 : Form
     {
-        MySqlConnection con = new MySqlConnection(server = localhost; user id = root; database = cadastro; allowuservariables = True");
-        int count = 0;
-
+        private string conn;
+        private MySqlConnection connect;
+        
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void db_connection()
+        {
+            try
+            {
+                conn = "User Id=root;Host=localhost;Pooling=False;Character Set=utf8";
+                connect = new MySqlConnection(conn);
+                connect.Open();
+            }
+
+            catch (MySqlException e)
+            {
+                throw;
+            }
+        }
+
+        private bool validate_login(string user, string pass)
+        {
+            db_connection();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "Select * from livraria_pessoa where nomepessoa=@user and senha=@pass";
+            cmd.Parameters.AddWithValue("@user", user);
+            cmd.Parameters.AddWithValue("@pass", pass);
+            cmd.Connection = connect;
+            MySqlDataReader login = cmd.ExecuteReader();
+            if (login.Read())
+            {
+                connect.Close();
+                return true;
+            }
+            else
+            {
+                connect.Close();
+                return false;
+            }
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = connectionstring.CreateCommand();            
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from livraria_pessoa", connectionstring);
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if dt.Rows.Count(0){
-                MessageBox.Show("Usuário ou Senha incorretos");
+            string user = textBox1.Text;
+            string pass = textBox2.Text;
+            if (user == "" || pass == "")
+            {
+                MessageBox.Show("Campos vazios! Por favor preencha todos os campos");
+                return;
             }
+
+            bool r = validate_login(user, pass);
+            if (r)
+                MessageBox.Show("Login efetuado com sucesso");
+            else
+                MessageBox.Show("Usuário ou senha incorretos");
 
             
         
@@ -42,8 +85,7 @@ namespace LivrariaSolucao
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(server = localhost; user id = root; database = cadastro; allowuservariables = True");
-            con.Open()
         }
     }
 }
+
